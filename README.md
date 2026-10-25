@@ -1,5 +1,13 @@
 # Eligible
 
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white)
+![LangGraph](https://img.shields.io/badge/LangGraph-1C3C3C?style=flat-square&logo=langchain&logoColor=white)
+![dbt](https://img.shields.io/badge/dbt-FF694B?style=flat-square&logo=dbt&logoColor=white)
+![OMOP%20CDM](https://img.shields.io/badge/OMOP%20CDM-0A7E8C?style=flat-square)
+![FHIR](https://img.shields.io/badge/FHIR-E4002B?style=flat-square)
+
 **Patient-to-trial matching on harmonized clinical data.**
 
 Eligible answers a deceptively hard clinical question (*is this patient eligible for this trial?*) end to end. It harmonizes messy, multi-schema patient data into a canonical clinical model (OMOP CDM), structures free-text trial eligibility criteria into machine-checkable logic, and matches the two with an audited, agentic reasoning pipeline. Every decision is redacted of PHI, access-controlled, and written to a tamper-evident audit trail.
@@ -49,3 +57,7 @@ cd ui && npm install && npm run dev   # http://localhost:3000
 ## Status
 
 The full pipeline (harmonization, criteria structuring, matching, governance, and a review UI) is built and verified end to end across milestones M0 through M5. The n2c2 benchmark harness is ready; the headline F1 number lands once the dataset's data-use agreement clears.
+
+---
+
+<sub>Built by **Mansi** · [github.com/Mansi2221](https://github.com/Mansi2221)</sub>
