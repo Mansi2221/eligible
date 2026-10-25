@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PatientMatching>
+<TEXT>
+Record date: 2091-01-01
+55 year old with type 2 diabetes. HbA1c 7.2%. History of appendectomy.
+Takes aspirin daily for cardiac prevention. English speaking, makes own decisions.
+</TEXT>
+<TAGS>
+<ABDOMINAL met="met" />
+<ADVANCED-CAD met="not met" />
+<ALCOHOL-ABUSE met="not met" />
+<ASP-FOR-MI met="met" />
+<CREATININE met="not met" />
+<DIETSUPP-2MOS met="not met" />
+<DRUG-ABUSE met="not met" />
+<ENGLISH met="met" />
+<HBA1C met="met" />
+<KETO-1YR met="not met" />
+<MAJOR-DIABETES met="not met" />
+<MAKES-DECISIONS met="met" />
+<MI-6MOS met="not met" />
+</TAGS>
+</PatientMatching>

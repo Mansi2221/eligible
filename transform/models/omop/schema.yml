@@ -1,0 +1,53 @@
+version: 2
+
+models:
+  - name: person
+    description: "OMOP CDM person, unified across Synthea and legacy sources."
+    columns:
+      - name: person_id
+        description: "Surrogate primary key."
+        tests: [not_null, unique]
+      - name: gender
+        tests:
+          - accepted_values:
+              values: ["MALE", "FEMALE"]
+      - name: source
+        tests:
+          - accepted_values:
+              values: ["synthea", "legacy"]
+
+  - name: condition_occurrence
+    description: "OMOP CDM condition_occurrence, SNOMED-standardized."
+    columns:
+      - name: condition_occurrence_id
+        tests: [not_null, unique]
+      - name: person_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('person')
+              field: person_id
+      - name: condition_concept_code
+        description: "Standard SNOMED code. Null flags an unmapped legacy ICD-10."
+        tests:
+          - not_null
+
+  - name: drug_exposure
+    columns:
+      - name: drug_exposure_id
+        tests: [not_null, unique]
+      - name: person_id
+        tests:
+          - relationships:
+              to: ref('person')
+              field: person_id
+
+  - name: measurement
+    columns:
+      - name: measurement_id
+        tests: [not_null, unique]
+      - name: person_id
+        tests:
+          - relationships:
+              to: ref('person')
+              field: person_id

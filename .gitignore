@@ -1,0 +1,40 @@
+# Env / secrets
+.env
+.env.local
+*.pem
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+build/
+
+# Data, never commit clinical data or vocabularies
+data/
+*.csv
+*.parquet
+vocab/athena/
+synthea_output/
+!ingestion/**/sample_*.csv
+
+# dbt
+transform/target/
+transform/dbt_packages/
+transform/logs/
+transform/.user.yml
+
+# Node / Next.js
+node_modules/
+ui/.next/
+ui/out/
+
+# OS / editors
+.DS_Store
+.vscode/
+.idea/

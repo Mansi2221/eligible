@@ -1,0 +1,23 @@
+name: "eligible"
+version: "0.0.1"
+config-version: 2
+
+profile: "eligible"
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+
+vars:
+  # Path to the messy legacy export, relative to the dbt invocation cwd (repo root).
+  legacy_csv: "data/legacy/legacy_diagnoses.csv"
+
+models:
+  eligible:
+    staging:
+      +materialized: view
+    omop:
+      +materialized: table
+
+# staging/ normalizes each raw source; omop/ maps into OMOP CDM tables
+# (person, condition_occurrence, drug_exposure, measurement). Vocabulary
+# resolution uses the icd10_to_standard seed (stand-in for OHDSI Athena).

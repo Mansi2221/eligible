@@ -1,0 +1,21 @@
+# Local dev services. The full app graph (api, ui, spark) is added per milestone.
+services:
+  postgres:
+    image: postgres:16
+    container_name: eligible-postgres
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-eligible}
+      POSTGRES_USER: ${POSTGRES_USER:-eligible}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-eligible}
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-eligible}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  pgdata:

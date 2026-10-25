@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: raw
+    description: "Raw tables landed by the ingestion layer (Synthea FHIR parser)."
+    tables:
+      - name: synthea_patients
+      - name: synthea_conditions
+      - name: synthea_medications
+      - name: synthea_measurements

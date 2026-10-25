@@ -1,0 +1,8 @@
+eligible:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      # Same DuckDB file the ingestion layer wrote raw.* into.
+      path: "{{ env_var('ELIGIBLE_DB', 'data/eligible.duckdb') }}"
+      threads: 4
